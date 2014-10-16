@@ -1,3 +1,10 @@
+# This is basically a wrapper around a hash so we can access the values using an attribute syntax.
+# It also supports indifferent access:
+#
+#   object.key    => value
+#   object['key'] => value
+#   object[:key]  => value
+
 class CollectionObject
   include Helpers
 
@@ -17,7 +24,6 @@ class CollectionObject
     @hash == other.to_h
   end
 
-  # Allow access as a hash
   def [](key)
     self.send(key)
   end
@@ -27,7 +33,7 @@ class CollectionObject
   end
 
   def method_missing(symbol, *args, &blk)
-    if key = find_actual_key(@hash.keys, symbol)  # Allow access as an attribute
+    if key = find_actual_key(@hash.keys, symbol)  # Allow the object to be accessed like an attribute:  object.key => value
       @hash[key] || 0
     else
       super

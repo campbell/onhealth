@@ -1,13 +1,17 @@
-# Create a collection of objects. The collection can be filtered by specific values or by a block.
-# These three statements are equivalent & return a collection with only objects that have year = 2013
+# Create a collection of objects that can be filtered by specific values or by a block. The three
+# statements below are equivalent & return a collection with only objects that have year = 2013
 #
-#  collection.yearID(2013)
-#  collection.where(yearID: 2013)
-#  collection.where{|obj| obj[:yearID] == 2013}
+#   collection.yearID(2013)
+#   collection.where(yearID: 2013)
+#   collection.where{|obj| obj[:yearID] == 2013}
+#
+# When using the method filters, you can specify multiple values:
+#
+#   collection.year(2013, 2014)  => either year is allowable
 #
 # Collection filters are chainable:
 #
-#  collection.yearID(2013).where(personID: 'abc')
+#   collection.yearID(2013).where(personID: 'abc')
 #
 # The objects are expected to be accessible like a hash though they don't have to be a true Hash. 
 # This class accesses the object attributes using a hash syntax but the actual object can
