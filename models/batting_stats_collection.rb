@@ -10,7 +10,8 @@ class BattingStatsCollection < Collection
 
     # Append the batting average to each stat
     @batting_stats.each do |stat|
-      stat['batting_average'] = Calculator.batting_average(stat.H, stat.AB) if stat.H && stat.AB && stat.AB > 0
+      avg = (stat.H && stat.AB && stat.AB > 0) ? Calculator.batting_average(stat.H, stat.AB) : nil
+      stat['batting_average'] = avg
     end
 
     @keys = keys || @batting_stats.first.keys

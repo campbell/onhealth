@@ -76,12 +76,15 @@ class Collection
   end
 
   # Allow field names to be used as methods for filtering:
-  #   stat.yearID(2012)
+  #
+  #  stat.yearID(2012)
+  #  stat.yearID(2012, 2013) 
+  #
   def method_missing(symbol, *args, &blk)
     key = find_actual_key(@keys, symbol)
 
-    if @keys.include?(key)
-      args.length > 0 ? filter{|s| args.include?(s[key])} : s[key]
+    if @keys.include?(key) && args.length > 0
+      filter{|obj| args.include?(obj[key])}
     else
       super
     end

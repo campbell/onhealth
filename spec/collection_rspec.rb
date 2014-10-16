@@ -49,7 +49,7 @@ describe Collection do
     it 'raises an error if an invalid condition name is used' do
       expect{
         collection.where(invalid_key_name: 1)
-      }.to raise_error("Attribute invalid_key_name was not found in the defined stats")
+      }.to raise_error("Attribute invalid_key_name was not defined in the object")
     end
   end
 

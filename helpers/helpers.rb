@@ -4,7 +4,7 @@ module Helpers
     if found_key = (keys & [key.to_sym, key.to_s]).first
       found_key
     else
-      raise StandardError, "Attribute #{key} was not found in the defined stats"
+      raise StandardError, "Attribute #{key} was not defined in the object"
     end
   end
 end
