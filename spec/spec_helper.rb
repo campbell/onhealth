@@ -1,1 +1,1 @@
-Dir['./models/**/*.rb'].each {|f| require f}
+Dir['./helpers/**/*.rb', './models/**/*.rb'].each {|f| require f}

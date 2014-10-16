@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe CsvImporter do
-  let(:imported_results) { CsvImporter.new('./spec/fixtures/batting_stats.csv').import }
+  let(:imported_results) { CsvImporter.new('./spec/fixtures/stats.csv').import }
 
   it 'returns an array of imported results' do
     expect(imported_results.length).to eq 2
