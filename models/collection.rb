@@ -9,9 +9,10 @@
 #
 #  collection.yearID(2013).where(personID: 'abc')
 #
-# The objects are expected to behave like a hash though they don't have to be a true Hash. 
+# The objects are expected to be accessible like a hash though they don't have to be a true Hash. 
 # This class accesses the object attributes using a hash syntax but the actual object can
 # be accessed within the custom filter blocks. 
+
 class Collection
   include Helpers
 
