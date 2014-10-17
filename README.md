@@ -1,14 +1,17 @@
-Installation:
-  
-  bundle install
+Installation
+============
 
-Run tests:
+>  bundle install
 
-  rspec spec/*
+Tests
+============
+
+>  rspec spec/*
 
 Run the "app":
+============
 
-  ruby run.rb
+>  ruby run.rb
 
 I probably went a bit beyond what was needed for this exercise, but it was a great opportunity
 to try some metaprogramming and use some functional programming...so if it seems a bit much...sorry!
