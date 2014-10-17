@@ -1,5 +1,7 @@
 require 'csv'
 
+# NOTE: Every CSV file must have a header row (just like the sample data ;-) 
+
 class CsvImporter
  
   def initialize(csv_file_name)
